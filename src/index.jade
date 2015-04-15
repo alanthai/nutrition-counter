@@ -1,0 +1,40 @@
+doctype
+html(ng-app="caloCount")
+	head
+		meta(charset="utf-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		title CaloCount
+		meta(name="description", content="")
+		meta(name="viewport", content="width=device-width, initial-scale=1")
+		link(rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap.min.css")
+		link(rel="stylesheet" type="text/css" href="caloCount.css")
+		link(rel="stylesheet" type="text/css" href="directives/cc-user/cc-user.css")
+		link(rel="stylesheet" type="text/css" href="directives/food-card/food-card.css")
+
+	body(ng-controller="caloCountCtrl as caloCount")
+		<!--[if lt IE 8]>
+		p.browsehappy
+			| You are using an <strong>outdated</strong> browser.
+			| Please <a href="http://browsehappy.com/">upgrade your browser</a>
+			| to improve your experience.
+		<![endif]-->
+
+		cc-user
+
+		tabset
+			tab(
+				ng-repeat="category in caloCount.categories"
+				heading="{{category.name}}"
+				active=""
+			)
+				food-card(ng-repeat="food in category.foods")
+
+		script(type="text/javascript" src="lib/jquery/jquery.min.js")
+		script(type="text/javascript" src="lib/angular/angular.min.js")
+		script(type="text/javascript" src="lib/angular-bootstrap/ui-bootstrap-tpls.min.js")
+		script(type="text/javascript" src="lib/ngDraggable/ngDraggable.js")
+		script(type="text/javascript" src="caloCount.js")
+		script(type="text/javascript" src="controllers/caloCount.controller.js")
+		script(type="text/javascript" src="filters/units.js")
+		script(type="text/javascript" src="directives/food-card/food-card.js")
+		script(type="text/javascript" src="directives/cc-user/cc-user.js")

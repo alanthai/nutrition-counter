@@ -1,0 +1,19 @@
+mixin food-bar(nutrition, uom)
+	progressbar(
+		class="#{nutrition}"
+		max="card.userSettings.dailyIntake['#{nutrition}']"
+		value="food.#{nutrition}"
+	) {{food.#{nutrition} | units:"#{uom}":settings.units.#{uom} }}
+
+.food-card(
+	ng-init="settings = card.userSettings"
+	ng-drag="true"
+	ng-drag-data="food"
+)
+	img(src="{{food.img}}")
+
+	.food-info
+		.food-name {{food.name}}
+		+food-bar("calories", "energy")
+		+food-bar("protein", "mass")
+		+food-bar("fat", "mass")

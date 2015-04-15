@@ -1,0 +1,1 @@
+All information found at the [Subway Website](http://www.subway.com/nutrition/NutritionList.aspx?id=soup&Countrycode=CAN)

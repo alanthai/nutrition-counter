@@ -1,0 +1,23 @@
+{
+  "name": "calocount",
+  "version": "0.0.0",
+  "authors": [
+    "Alan Thai <alanthai@gofleet.ca>"
+  ],
+  "moduleType": [
+    "es6"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "node_modules",
+    "www/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.15",
+    "angular-bootstrap": "~0.12.1",
+    "bootstrap": "~3.3.4",
+    "ngDraggable": "~0.1.3"
+  }
+}

@@ -1,0 +1,23 @@
+food-card {
+  display: inline-block;
+}
+.food-card {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 7px;
+  display: flex;
+  margin: 5px;
+  padding: 3px 7px;
+  width: 300px;
+}
+.food-card img {
+  flex: 0 0 64px;
+  margin-right: 5px;
+}
+.food-card .food-info {
+  flex: 1;
+}
+.food-card .food-info .progress {
+  margin-bottom: 5px;
+  height: 15px;
+}
