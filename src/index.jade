@@ -19,15 +19,19 @@ html(ng-app="caloCount")
 			| to improve your experience.
 		<![endif]-->
 
-		cc-user
+		.container
+			.page-header
+				h1 Nutrition Counter
 
-		tabset
-			tab(
-				ng-repeat="category in caloCount.categories"
-				heading="{{category.name}}"
-				active=""
-			)
-				food-card(ng-repeat="food in category.foods")
+			cc-user
+
+			tabset
+				tab(
+					ng-repeat="category in caloCount.categories"
+					heading="{{category.name}}"
+					active=""
+				)
+					food-card(ng-repeat="food in category.foods")
 
 		script(type="text/javascript" src="lib/jquery/jquery.min.js")
 		script(type="text/javascript" src="lib/angular/angular.min.js")

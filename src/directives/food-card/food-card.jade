@@ -1,9 +1,12 @@
 mixin food-bar(nutrition, uom)
-	progressbar(
-		class="#{nutrition}"
-		max="card.userSettings.dailyIntake['#{nutrition}']"
-		value="food.#{nutrition}"
-	) {{food.#{nutrition} | units:"#{uom}":settings.units.#{uom} }}
+	.food-bar
+		.label {{'#{nutrition}'[0].toUpperCase()}}
+		progressbar(
+			class="#{nutrition}"
+			max="card.userSettings.dailyIntake['#{nutrition}']"
+			value="food.#{nutrition}"
+		)
+		//- {{food.#{nutrition} | units:"#{uom}":settings.units.#{uom} }}
 
 .food-card(
 	ng-init="settings = card.userSettings"

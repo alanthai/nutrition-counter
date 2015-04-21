@@ -1,33 +1,37 @@
 mixin user-bar(nutrition, uom)
-	progress(
-		ng-repeat="intakes in user.intakes['#{nutrition}']"
-		max="user.settings.dailyIntake['#{nutrition}']"
-	)
-		bar(
-			ng-init="food = user.foods[intake.foodIndex]"
-			ng-repeat="intake in intakes track by $index"
-			ng-mouseover="food.highlight = true"
-			ng-mouseleave="food.highlight = false"
-			class="user-bar-{{intake.foodIndex + 1}}{{food.highlight ? ' progress-striped' : ''}}"
-			value="intake.value"
-		) {{intake.value | units:"#{uom}":user.settings.units.#{uom} }}
+	.user-bar
+		.label {{user.upper('#{nutrition}')}}
+		.progress-bars
+			progress(
+				ng-repeat="intakes in user.intakes['#{nutrition}']"
+				max="user.settings.dailyIntake['#{nutrition}']"
+			)
+				bar(
+					ng-init="food = user.foods[intake.foodIndex]"
+					ng-repeat="intake in intakes track by $index"
+					ng-mouseover="food.highlight = true"
+					ng-mouseleave="food.highlight = false"
+					class="user-bar-{{intake.foodIndex + 1}}{{food.highlight ? ' randomstuff' : ''}}"
+					value="intake.value"
+				) {{intake.value | units:"#{uom}":user.settings.units.#{uom} }}
 
 .cc-user(
 	ng-drop="true"
 	ng-drop-success="user.addFood($data, $event)"
 )
-	img(src="{{user.img}}")
 	.user-info
 		+user-bar("calories", "energy")
 		+user-bar("protein", "mass")
 		+user-bar("fat", "mass")
 
-	div.menu
-		div.menu-item(
-			ng-repeat="food in user.foods"
-			ng-click="user.removeFood(food)"
-			ng-mouseover="food.highlight = true"
-			ng-mouseleave="food.highlight = false"
-			ng-class="{active: food.highlight}"
-		) {{food.name}}
-			span.glyphicon.glyphicon-remove.pull-right
+div.menu
+	.item-list.text-muted(ng-if="user.foods.length") Items:
+	div.menu-item(
+		ng-repeat="food in user.foods"
+		ng-click="user.removeFood(food)"
+		ng-mouseover="food.highlight = true"
+		ng-mouseleave="food.highlight = false"
+		ng-class="{active: food.highlight}"
+	) {{food.name}}
+		span.glyphicon.glyphicon-remove.pull-right.text-muted
+		//- span.text-muted ×

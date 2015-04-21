@@ -12,6 +12,10 @@ angular.module('caloCount')
 
         this.foods = []; // and their nutritional values
 
+        this.upper = function(str) {
+          return str[0].toUpperCase() + str.slice(1);
+        }
+
         this.resetChunks = function() {
           this.intakes = {calories: [[]], protein: [[]], fat: [[]]};
           this.intakeTotals = {calories: 0, protein: 0, fat: 0};
