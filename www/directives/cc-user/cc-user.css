@@ -1,37 +1,103 @@
+/* 
+@user-bar-colors: #337AB7, #2FAECE, #2D2FC4, #2DC4B9, #2F5BCE,
+	#5CB85C, #85CF5D, #59C596, #A4C559, #5DCF7D,
+	#F0AD4E, #D9813C, #F8D244, #F87A44, #D9A83C;
+ */
 .user-bar-1 {
-  background-color: red;
+  background-color: #2faece;
 }
 .user-bar-2 {
-  background-color: green;
+  background-color: #f8d244;
 }
 .user-bar-3 {
-  background-color: blue;
+  background-color: #85cf5d;
 }
-.cc-user {
-  display: flex;
+.user-bar-4 {
+  background-color: #2f5bce;
 }
-.cc-user img {
-  flex: 0 0 128px;
-  margin-right: 10px;
+.user-bar-5 {
+  background-color: #f87a44;
 }
-.cc-user .user-info {
-  flex: 1;
+.user-bar-6 {
+  background-color: #59c596;
 }
-.cc-user .user-info .progress-bar.progress-striped {
-  background-color: black;
+.user-bar-7 {
+  background-color: #2dc4b9;
 }
-.cc-user .menu {
-  border: 1px solid #ddd;
-  overflow-y: scroll;
-  height: 150px;
+.user-bar-8 {
+  background-color: #5cb85c;
 }
-.cc-user .menu .menu-item {
+.user-bar-9 {
+  background-color: #d9813c;
+}
+.user-bar-10 {
+  background-color: #a4c559;
+}
+.user-bar-11 {
+  background-color: #d9a83c;
+}
+.user-bar-12 {
+  background-color: #337ab7;
+}
+.user-bar-13 {
+  background-color: #f0ad4e;
+}
+.user-bar-14 {
+  background-color: #2d2fc4;
+}
+.user-bar-15 {
+  background-color: #5dcf7d;
+}
+.menu {
+  margin-bottom: 20px;
+}
+.menu .item-list {
+  font-size: 20px;
+}
+.menu .menu-item {
   cursor: pointer;
   color: #333;
-  padding: 8px;
-  border-bottom: 1px solid #ddd;
+  padding: 5px;
+  display: inline-block;
+  border: 1px solid #ddd;
+  background-color: #eee;
+  margin: 5px;
 }
-.cc-user .menu .menu-item:hover,
-.cc-user .menu .menu-item.active {
+.menu .menu-item:hover,
+.menu .menu-item.active {
   background-color: #f5f5f5;
+}
+.menu .menu-item .glyphicon {
+  line-height: 1.4em;
+  margin-left: 3px;
+}
+.user-bar {
+  display: flex;
+  margin-bottom: 10px;
+}
+.user-bar .label {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+  background: linear-gradient(to bottom, #f25933 0%, #e5693b 100%);
+  margin: 2px 0;
+  width: 10em;
+  border-radius: 0;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+.user-bar .progress-bars {
+  margin-top: 5px;
+  flex: 1;
+}
+.user-bar .progress-bars .progress {
+  border-radius: 0;
+  height: 16px;
+  margin: auto;
+  background-color: #eee;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  margin-bottom: 5px;
+}
+.randomstuff {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3));
 }
