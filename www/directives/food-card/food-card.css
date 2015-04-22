@@ -2,6 +2,7 @@ food-card {
   display: inline-block;
 }
 .food-card {
+  cursor: move;
   background-color: white;
   display: flex;
   margin: 5px;

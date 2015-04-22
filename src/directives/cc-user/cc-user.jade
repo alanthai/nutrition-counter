@@ -5,6 +5,7 @@ mixin user-bar(nutrition, uom)
 			progress(
 				ng-repeat="intakes in user.intakes['#{nutrition}']"
 				max="user.settings.dailyIntake['#{nutrition}']"
+				ng-class="{drag-over: user.dragOver}"
 			)
 				bar(
 					ng-init="food = user.foods[intake.foodIndex]"
@@ -27,7 +28,7 @@ mixin user-bar(nutrition, uom)
 div.menu
 	.item-list.text-muted(ng-if="user.foods.length") Items:
 	div.menu-item(
-		ng-repeat="food in user.foods"
+		ng-repeat="food in user.foods track by $index"
 		ng-click="user.removeFood(food)"
 		ng-mouseover="food.highlight = true"
 		ng-mouseleave="food.highlight = false"
